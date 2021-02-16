@@ -31,7 +31,7 @@ aRouter.post(
             let vehicles = [];
             if (req.body.id) {
                 vehicles =
-                    await VehicleModel.find({ $or: [{ "make": new RegExp(req.body.id, 'i') }, { "model": new RegExp(req.body.id, 'i') }, { "no": new RegExp(req.body.id, 'i') }, { "year": new RegExp(req.body.id, 'i') },, { "price": new RegExp(req.body.id, 'i') }] })
+                    await VehicleModel.find({ $or: [{ "make": new RegExp(req.body.id, 'i') }, { "model": new RegExp(req.body.id, 'i') }, { "no": new RegExp(req.body.id, 'i') }, { "year": new RegExp(req.body.id, 'i') },{ "price": new RegExp(req.body.id, 'i') }] })
             } else {
                 vehicles = await VehicleModel.find().lean();
             }
